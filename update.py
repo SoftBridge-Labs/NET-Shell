@@ -3,7 +3,7 @@ import os
 import sys
 
 # Replace this URL with your actual GitHub repository link
-REPO_URL = "https://github.com/PrakharDoneria/NET-Shell.git"
+REPO_URL = "https://github.com/SoftBridge-Labs/NET-Shell.git"
 
 def check_for_updates():
     """

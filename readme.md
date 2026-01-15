@@ -25,7 +25,7 @@
 
 ### 1. Initialize Environment
 ```bash
-git clone https://github.com/PrakharDoneria/NET-Shell.git
+git clone https://github.com/SoftBridge-Labs/NET-Shell.git
 cd NET-Shell
 
 ```
