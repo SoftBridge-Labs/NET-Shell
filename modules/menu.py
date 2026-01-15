@@ -51,7 +51,7 @@ def handle_flood_input():
     
     try:
         # Default values based on specific homework inputs
-        url = input(f"{CYAN}Target URL [https://iec.edu.in]: {RESET}") or "https://iec.edu.in"
+        url = input(f"{CYAN}Target URL: {RESET}")
         
         cycles_input = input(f"{CYAN}Request Count/Cycles: {RESET}")
         cycles = int(cycles_input) if cycles_input else 2
