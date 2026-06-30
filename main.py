@@ -4,7 +4,8 @@ import os
 # Add current directory to path to ensure modules are found
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
-from modules import menu, host, utils, scanner, system
+from modules import menu, host, utils, scanner, system, traceroute, whois_lookup, ping_monitor
+from modules import waf_fingerprint, speedtest, session_logger, net_monitor
 
 # Conditional imports for setup, update, and maintenance utilities
 try:
@@ -61,14 +62,48 @@ def start():
                 input("\nPress Enter to return...")
 
             elif choice == '5':
+                menu.handle_traceroute_input()
+                input("\nPress Enter to return...")
+
+            elif choice == '6':
+                menu.handle_whois_input()
+                input("\nPress Enter to return...")
+
+            elif choice == '7':
+                menu.handle_ping_monitor_input()
+                input("\nPress Enter to return...")
+
+            elif choice == '8':
                 m_choice = menu.maintenance_menu()
                 if m_choice == '1': 
                     setup.install_requirements()
                 elif m_choice == '2': 
                     cleaner.purge_cache()
 
-            elif choice == '6':
+            elif choice == '9':
                 update.check_for_updates()
+                input("\nPress Enter to return...")
+
+            elif choice == 'a':
+                session_logger.start_capture("WAF / Firewall Fingerprinter")
+                menu.handle_waf_input()
+                session_logger.stop_capture()
+                input("\nPress Enter to return...")
+
+            elif choice == 'b':
+                session_logger.start_capture("Bandwidth Speed Estimator")
+                menu.handle_speedtest_input()
+                session_logger.stop_capture()
+                input("\nPress Enter to return...")
+
+            elif choice == 'c':
+                session_logger.start_capture("Network Interface Monitor")
+                menu.handle_net_monitor_input()
+                session_logger.stop_capture()
+                input("\nPress Enter to return...")
+
+            elif choice == 'l':
+                menu.handle_session_logger_input()
                 input("\nPress Enter to return...")
 
             elif choice == 'q':
